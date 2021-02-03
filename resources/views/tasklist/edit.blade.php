@@ -8,6 +8,11 @@
         <div class="col-6">
             {!! Form::model($tasklist4, ['route' => ['tasklist.update', $tasklist4->id], 'method' => 'put']) !!}
 
+                                <div class="form-group">
+                    {!! Form::label('status', 'ステータス:') !!}
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
+                </div>
+
                 <div class="form-group">
                     {!! Form::label('content', '予定:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}

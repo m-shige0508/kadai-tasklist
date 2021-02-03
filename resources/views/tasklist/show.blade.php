@@ -9,6 +9,10 @@
             <th>id</th>
             <td>{{ $tasklist3->id }}</td>
         </tr>
+                <tr>
+            <th>ステータス</th>
+            <td>{{ $tasklist3->status }}</td>
+        </tr>
         <tr>
             <th>予定</th>
             <td>{{ $tasklist3->content }}</td>
