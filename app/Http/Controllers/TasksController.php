@@ -22,6 +22,7 @@ class TasksController extends Controller
         return view ("tasklist.index",[
             'tasklist1'=>$task,
             ]);
+            
     }
 
     /**
@@ -32,7 +33,7 @@ class TasksController extends Controller
     public function create()
     {
         $tasks = new Task;
-        
+    
         return view('tasklist.create',[
             'tasklist2' => $tasks,
             ]);
@@ -71,6 +72,7 @@ class TasksController extends Controller
      */
     public function show($id)
     {
+        
                 // idの値でタスクを検索して取得
         $tasks = Task::findOrFail($id);
 
@@ -90,7 +92,7 @@ class TasksController extends Controller
     {
         // idの値でタスクを検索して取得
         $tasks = Task::findOrFail($id);
-
+     
         // タスク編集ビューでそれを表示
         return view('tasklist.edit', [
             'tasklist4' => $tasks,
@@ -105,7 +107,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+                
                 // バリデーション
         $request->validate([
             'status' => 'required|max:10',   // 追加
@@ -118,6 +120,9 @@ class TasksController extends Controller
         // タスクを更新
         $tasks->status = $request->status;    // 追加
         $tasks->content = $request->content;
+        
+                
+        
         $tasks->save();
 
         // トップページへリダイレクトさせる
