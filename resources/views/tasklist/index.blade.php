@@ -27,6 +27,8 @@
     
         {{-- メッセージ作成ページへのリンク --}}
     {!! link_to_route('tasklist.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}
+      {{-- ユーザ登録ページへのリンク --}}
+    {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
 
 
 
