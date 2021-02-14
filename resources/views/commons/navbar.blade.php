@@ -11,20 +11,13 @@
                     <ul class="navbar-nav mr-auto"></ul>
                    <ul class="navbar-nav">
                 @if (Auth::check())
-                    <li class="nav-item">{!! link_to_route('tasklist.create', '新規メッセージの投稿', [], ['class' => 'btn btn-primary']) !!}</li>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            {{-- ユーザ詳細ページへのリンク --}}
-                            <li class="dropdown-item"><a href="#">My profile</a></li>
-                            <li class="dropdown-divider"></li>
-                            {{-- ログアウトへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
-                        </ul>
-                    </li>
+                    <li class="nav-item">{!! link_to_route('tasklist.create', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
                 @else
                     {{-- ユーザ登録ページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('signup.get', 'Signup', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>
                     {{-- ログインページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('login', 'Login', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
                 @endif
                 </div>
             </nav>
